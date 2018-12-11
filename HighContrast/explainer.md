@@ -6,18 +6,18 @@ High contrast is a [Windows accessibility feature](https://docs.microsoft.com/en
 
 The Windows platform provides built-in [high contrast color themes](https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/high-contrast-themes) such as the more popular "black-on-white" and "white-on-black" themes. Besides the default themes, users can customize the colors and create their own themes. Applications can make use of these color themes and propagate them into their content model. In the case of the web browser, high contrast colors are propagated to website pages as a set of user agent styles, thus increasing readability of the text and allowing a coherent experience across the Windows OS and various applications.
 
-Edge is currently the only browser to support the high contrast feature using Windows high contrast themes. When high contrast is enabled in Chrome, a popup is displayed prompting the user to install the [High Contrast extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph). This extension uses CSS/SVG filter effects overlaid on the entire webpage using its own predefined themes.
+Microsoft Edge is currently the only browser to support the high contrast feature using Windows high contrast themes. When high contrast is enabled in Chrome, a popup is displayed prompting the user to install the [High Contrast extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph). This extension uses CSS/SVG filter effects overlaid on the entire webpage using its own predefined themes.
 
 The advantage of enabling high contrast in the core platform, in comparison to the extension-based approach, is that it provides a more seamless experience for users with the rest of the Windows OS. This includes not just the browser-context, but also other Chromium-powered applications. 
 
 ## User Flow
 
 1. User enables high contrast on their Windows device.
-!['Turn on high contrast’ toggled to the ‘on’ state within Windows Settings > Ease of Access > High Contrast](TurnOnHighContrast.jpg)
+!['Turn on high contrastâ€™ toggled to the â€˜onâ€™ state within Windows Settings > Ease of Access > High Contrast](TurnOnHighContrast.jpg)
 2. User opens the Chrome browser, and the chosen high contrast theme ("white-on-black" in this case) is used throughout their entire browsing experience.
 ![Opened browser to 'https://www.wikipedia.org/' and high contrast colors are used throughout the webpage](BrowserInHighContrast.jpg)
 3. User turns high contrast off.
-!['Turn on high contrast’ toggled to the ‘off’ state within Windows Settings > Ease of Access > High Contrast](TurnOffHighContrast.jpg)
+!['Turn on high contrastâ€™ toggled to the â€˜offâ€™ state within Windows Settings > Ease of Access > High Contrast](TurnOffHighContrast.jpg)
 4. The opened browser is dynamically updated to use the original site-defined colors.
 ![Opened browser to 'https://www.wikipedia.org/' and site-defined colors are used throughout the webpage](BrowserWithoutHighContrast.jpg)
 
