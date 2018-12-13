@@ -98,7 +98,7 @@ Value | Description
 In the HTML code snippet above, ```"Some Text"``` will appear orange whether or not high contrast is enabled because ```high-contrast-adjust``` is set to ```none```, effectively preventing high contrast from affecting its color.
 
 ## Cascade Order
-As mentioned previously, high contrast color schemes will override defined webpage styles for various CSS properties to ensure readability. The process model for these high contrast overrides is as follows:
+As mentioned previously, high contrast color schemes work by overriding user defined webpage styles for various CSS properties in order to ensure readability. The process model for these high contrast overrides is as follows:
 
 Given an element and a declaration from a CSS rule whose selector matches that element, the application of that declaration will be suppressed if all of the following conditions are met:
 
@@ -109,9 +109,11 @@ Given an element and a declaration from a CSS rule whose selector matches that e
 
 3. The computed value of ```high-contrast-adjust``` on the element is ```auto```
 
-4. The rule is **not** contained (directly or indirectly) in an ```@media``` block matching the ```high-contrast``` media feature
+4. The rule is **not** contained (directly or indirectly) inside an ```@media``` block matching the ```high-contrast``` media feature
 
 5. The rule is **not** defined in the default UA style sheet
+
+If all the above conditions are met, the computed color value of the CSS property is overeriden by a system color value.  
 
 ## System Colors
 High contrast relies on system color keywords to fetch the appropriate theme colors, which are deprecated from the CSS Color standard in both [Level 3](https://drafts.csswg.org/css-color-3/#css2-system) and [Level 4](https://drafts.csswg.org/css-color-4/#system-colors). Blink currently does have support for these keywords, but they're currently mapped to hard-coded values instead of being plumbed through to the system color API. There is a derived class ```LayoutThemeWin```, but it currently doesn't add any functionality for this. Functionality can be added here to support the required system color keywords.
