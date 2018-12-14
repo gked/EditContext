@@ -23,7 +23,7 @@ The advantage of enabling high contrast in the core platform, in comparison to t
 
 ## CSS Media Query
 
-In order to allow developer defined high contrast rules for webpages, a [high contrast media query type](https://msdn.microsoft.com/en-us/library/hh771830(v=vs.85).aspx) would be added called ```high-contrast```. This CSS media query type is currently supported by Microsoft Edge and IE. If an ```high-contrast``` media query evaluates to true, any styles defined within that media query *will* be used when in high contrast and will *not* be overridden by the high contrast feature.
+In order to allow developer defined high contrast rules for webpages, a [high contrast media query type](https://msdn.microsoft.com/en-us/library/hh771830(v=vs.85).aspx) would be added called ```high-contrast```. This CSS media query type is currently supported by Microsoft Edge and IE. If a ```high-contrast``` media query evaluates to true, any styles defined within that media query *will* be used when in high contrast and will *not* be overridden by the high contrast feature.
 
 #### Possible values
 
