@@ -139,6 +139,12 @@ Instead, a preferred solution is to draw a so-called "readability backplate" beh
 
 ![High contrast readability backplate](Backplate.jpg)
 
+This backplate does not replace the background of an element, but rather is drawn on an intermediary layer:
+
+![Exploded diagram showing three separate layers: element text contents, a backplate rectangle, and the element background](exploded-diagram.jpg)
+
+As the diagram demonstrates, an element's text contents are rendered in the WindowText system color, a backplate with a Window system color fill is drawn behind the text, and these are layered on top of the element background (background-color being filtered out). In the case of links, the text would instead use the appropriate high contrast link color.
+
 ## Open questions
 
 Should the high contrast readability backplate be customizable for developers? In other words, should there be a similar ```high-contrast-backplate``` CSS property to allow certain styles of the backplate to be customized?
