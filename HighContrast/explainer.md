@@ -141,7 +141,7 @@ Instead, a preferred solution is to draw a so-called "readability backplate" beh
 
 This backplate does not replace the background of an element, but rather is drawn on an intermediary layer:
 
-![Exploded diagram showing three separate layers: element text contents, a backplate rectangle, and the element background](exploded-diagram.jpg)
+![Exploded diagram showing three separate layers: element text contents, a backplate rectangle, and the element background](exploded-diagram.png)
 
 As the diagram demonstrates, an element's text contents are rendered in the WindowText system color, a backplate with a Window system color fill is drawn behind the text, and these are layered on top of the element background (background-color being filtered out). In the case of links, the text would instead use the appropriate high contrast link color.
 
