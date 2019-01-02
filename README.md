@@ -9,3 +9,6 @@ This is a private repository where the Edge team can stage explainers to review 
   * [UIA intent-to-implement](UIA/i2i.md)
 * High Contrast
   * [High Contrast explainer](HighContrast/explainer.md)
+* ARIA Virtual Content
+  * [ARIA Virtual Content explainer](VirtualContent/explainer.md)
+  
