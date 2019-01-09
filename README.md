@@ -11,4 +11,5 @@ This is a private repository where the Edge team can stage explainers to review 
   * [High Contrast explainer](HighContrast/explainer.md)
 * ARIA Virtual Content
   * [ARIA Virtual Content explainer](VirtualContent/explainer.md)
-  
+* WinRT
+  * [Shortcuts Explainer](WinRT/shortcuts/explainer.md)
