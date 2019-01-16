@@ -1,5 +1,8 @@
 ﻿# High Contrast Explainer
 
+Authors: [Rossen Atanassov](https://github.com/atanassov), [Alison Maher](https://github.com/amaher23)
+Last Updated: 2019-01-07
+
 ## Overview
 
 High contrast is a [Windows accessibility feature](https://docs.microsoft.com/en-us/windows/desktop/w8cookbook/high-contrast-mode) intended to increase the readability of text through color contrast. Individuals with low vision may find it more comfortable to read content when there is a strong contrast between foreground and background colors. High contrast is a useful feature in increasing the readability of screen-based text for such users.
