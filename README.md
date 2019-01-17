@@ -4,6 +4,8 @@ This is a private repository where the Edge team can stage explainers to review 
 
 ## Features in Internal Incubation
 
+* EditContext
+  * [EditContext explainer](EditContext/explainer.md)
 * High Contrast
   * [High Contrast explainer](HighContrast/explainer.md)
 * ARIA Virtual Content
