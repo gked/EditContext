@@ -44,26 +44,23 @@ Current exploration within the IndieWeb community (which refers to these as "fra
 It’s worth pointing out that there are pros and cons to both approaches:
 
 |  | Pros | Cons |
-
 |-|---------|---------|
-
 | Document | Author controls the experience | Author must define the experience for users to benefit |
-
-| Client | * Users enjoy a shared experience across the Web * Every site gets the upgraded experience * Browsers already offer a robust in-page text search | Authors may not be able to control the experience |
+| Client | <ul><li>Users enjoy a shared experience across the Web</li><li>Every site gets the upgraded experience</li><li>Browsers already offer a robust in-page text search</li></ul> | Authors may not be able to control the experience |
 
 ## API Explorations
 
 Kevin Marks and others within the IndieWeb community have explored a variety of approaches for denoting arbitrary text searches in a URI.
 
-### #arbitrary%20text%20search
+### `#arbitrary%20text%20search`
 
 The IndieWeb is in favor of re-purposing the existing fragment identifier (a single hash character) with general agreement that spaces (which will need to be encoded) will provide enough differentiation from existing fragment identifiers. To use this approach, any raw hash (#) or whitespace. It’s worth noting that this approach could lead to some potential confusion for the User Agent when dealing with a link that references both an existing anchor _and_ arbitrary text.
 
-### ##arbitrary%20text%20search
+### `##arbitrary%20text%20search`
 
-An earlier proposal from the IndieWeb community involved using a double hash prefix. The URL spec ([https://tools.ietf.org/html/rfc3986#appendix-A](https://tools.ietf.org/html/rfc3986#appendix-A)) does not allow for hash characters in a fragment, so these links will fail strict validation. HTML5 also allows for the hash character to be used in an id attribute, leading to some potential confusion for the User Agent when dealing with a link that references both an existing anchor _and_ arbitrary text.
+An earlier proposal from the IndieWeb community involved using a double hash prefix. The [URL spec](https://tools.ietf.org/html/rfc3986#appendix-A) does not allow for hash characters in a fragment, so these links will fail strict validation. HTML5 also allows for the hash character to be used in an id attribute, leading to some potential confusion for the User Agent when dealing with a link that references both an existing anchor _and_ arbitrary text.
 
-### #search=arbitrary%20text%20search
+### `#search=arbitrary%20text%20search`
 
 This proposal takes a page from the direction Media Fragments have gone via a name-value component in the fragment. This would enable User Agent’s to disambiguate anchor references from arbitrary text searches.
 
@@ -71,7 +68,7 @@ Note: The named keyword could be anything not currently reserved as part of anot
 
 ### Additional considerations
 
-There has been some discussion over whether white space should be represented as an encoded space (%20) or a plus (+) in the arbitrary fragment.** The latter would require** additional encoding of any literal plus characters in the arbitrary text.
+There has been some discussion over whether white space should be represented as an encoded space (%20) or a plus (+) in the arbitrary fragment. The latter would require additional encoding of any literal plus characters in the arbitrary text.
 
 ## Related Ideas & Implementations
 
@@ -109,9 +106,9 @@ There has been some discussion over whether white space should be represented as
 
 ## Open Questions/Challenges
 
-* CSS hooks?
-* text containing a #
-* text spanning multiple elements and/or with other elements in between (e.g., an inline `img`)
-* multiple instances of matched text
-* Changing structure vs. changing content
-* generated content
+* Would it make sense to add a new CSS selector for this or would the [`:target` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:target) be suitable?
+* What happens if the text containins a # (e.g., a hashtag)?
+* What happens if the text spans multiple element boundaries or has non-text elements in the missle of the string (e.g., an inline `img`)?
+* What do we do with multiple instances of matched text? Could we leverage the built in search function? If we added CSS selectors for this, would we need pseudo-classes for every matched strong *and* the instance in the series that the user is currently on?
+* What happens when the page changes structure? What about when the content changes (over time or via DOM manipulation)?
+* Does [generated content](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Generated_Content) get factored in?
