@@ -34,7 +34,8 @@ To ensure security and get around the sandboxing, Chromium uses a font proxy. Th
 Provide example code that ties together problem, proposed solution and how it enables the listed use-cases
 The following code snippet shows how a given family is found via its name in the current Chromium implementation.
 
-```UINT32 index;
+```
+UINT32 index;
 BOOL exists;
 HRNM(fFontCollection->FindFamilyName(dwFamilyName.get(), &index, &exists),
      "Failed while finding family by name.");
@@ -48,7 +49,8 @@ As mentioned previously, this method does not take into account the type of fami
 
 The next code snippet shows the use of font sets and name types to allow the filtering of fonts into a desired set. 
 
-```DWRITE_FONT_PROPERTY win32FamilyName = { DWRITE_FONT_PROPERTY_ID_WIN32_FAMILY_NAME, 
+```
+DWRITE_FONT_PROPERTY win32FamilyName = { DWRITE_FONT_PROPERTY_ID_WIN32_FAMILY_NAME, 
 							  dwFamilyName.get() };
 fFontSet1->GetPropertyOccurrenceCount(&win32FamilyName, &fontCount);
 if (fontCount != 0){
