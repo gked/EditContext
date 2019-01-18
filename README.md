@@ -10,6 +10,8 @@ This is a private repository where the Edge team can stage explainers to review 
   * [ARIA Virtual Content explainer](VirtualContent/explainer.md)
 * WinRT
   * [Shortcuts Explainer](WinRT/shortcuts/explainer.md)
+* TSF1
+  * [Shortcuts Explainer](TSF1/explainer.md)
 
 ### Graduated Features 
 (now in [Public Explainers Repo](https://github.com/MicrosoftEdge/MSEdgeExplainers))
