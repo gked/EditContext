@@ -6,6 +6,7 @@ This is a private repository where the Edge team can stage explainers to review 
 
 * EditContext
   * [EditContext explainer](EditContext/explainer.md)
+* [FontSets](FontSets/explainer.md)
 * High Contrast
   * [High Contrast explainer](HighContrast/explainer.md)
 * ARIA Virtual Content
