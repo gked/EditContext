@@ -14,6 +14,9 @@ This is a private repository where the Edge team can stage explainers to review 
   * [Shortcuts Explainer](WinRT/shortcuts/explainer.md)
 * Fragments
   * [Explainer](Fragments/explainer.md)
+* TSF1
+  * [Shortcuts Explainer](TSF1/explainer.md)
+
 
 ### Graduated Features 
 (now in [Public Explainers Repo](https://github.com/MicrosoftEdge/MSEdgeExplainers))
