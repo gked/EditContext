@@ -1,8 +1,7 @@
 # Streamlining Text Input in IMEs
 
-Authors: [Amit Jain](amitja@microsoft.com) | [Grisha Lyukshin](https://github.com/gked)
-
 Disclaimer: this document is not a proposal to introduce a new set or to edit an existing set of JavaScript APIs but rather a proposal for integrating TSFS1.0 into Chromium for better IME support and Soft Keyboard experiences on Windows.
+
 
 ## Introduction/Motivation
 The Input Method Editor (IME) was originally intended to be used for typing languages whose glyphs were not present on user keyboards.

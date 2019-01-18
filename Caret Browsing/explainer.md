@@ -1,7 +1,5 @@
 # Native Caret Browsing Support Explainer
 
-Authors: [Grisha Lyukshin](https://github.com/gked)
-
 Disclaimer: this document is not a proposal to introduce a new set or to edit an existing set of JavaScript APIs but rather to explain a problem that we would to solve in Chromium project and propose some early thinking on it.
 
 ## Introduction
