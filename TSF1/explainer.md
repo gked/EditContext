@@ -1,6 +1,6 @@
 # Streamlining Text Input in IMEs
 
-Disclaimer: this explainer is not a proposal to introduce a new set or to edit an existing set of JavaScript APIs but rather a proposal for integrating TSFS1.0 into Chromium for better IME support and Soft Keyboard experiences on Windows.
+Disclaimer: this document is not a proposal to introduce a new set or to edit an existing set of JavaScript APIs but rather a proposal for integrating TSFS1.0 into Chromium for better IME support and Soft Keyboard experiences on Windows.
 
 ## Introduction/Motivation
 The Input Method Editor (IME) was originally intended to be used for typing languages whose glyphs were not present on user keyboards.
@@ -27,11 +27,12 @@ Provide Chromium-based browsers with context-rich IME powered-typing experience 
 
 ## Non-Goals
 It is a non-goal to completely replace existing legacy input stack on Windows as it is still used by some third party plugins.
+This proposal is not aiming to address SIP issues on other platforms.
 
 ## Solution
 The missing features described in the introduction should be addressed by implementing Text Services Framework (TSF1.0) in Chromium. TSF1.0 is currently shipped on Windows Desktop starting from version 7 and up. TSF1.0 implementation provides access to platform’s text intelligence services that will streamline typing experience in IME.
 
-## Alternatives
-Windows Input stack has since evolved from TSF1.0 into what it is called a TSF3.0<sup>[1](#tsf3footnote1today)</sup>. We considered TSF3.0 as alternative as well but leaned towards TSF1.0. While not sufficiently different feature-wise, TSF3.0 API set is accessed through WinRT layer which is not available on Windows down-level, and therefore, it would be a significant challenge to port. To avoid having two different versions of TFS implemented, the decision was made to stay with TSF1.0 model.
+## Alternatives Considered
+Windows Input stack has since evolved from TSF1.0 into what is called a TSF3.0<sup>[1](#tsf3footnote1today)</sup>. We considered TSF3.0 as an alternative as well but leaned towards TSF1.0 as it is not sufficiently different feature-wise. In addition, TSF3.0 APIs are accessed through WinRT layer which is not available on Windows down-level, and therefore, it would be a significant challenge to port.
 
 <a name="tsf3footnote1">1</a>: TSF2.0, a precursor to TSF3.0 was an in-between versions framework that was only used in non-desktop versions of Windows, which was eventually replaced by TSF3.0. Starting from Spring of 2017 TSF3.0 version has been unified on desktop and non-desktop versions of Windows. 
