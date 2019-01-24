@@ -17,5 +17,22 @@ Discoverability of the extension also lacks user friendliness. In order to insta
 ## Solutions
 One of the possible solutions to these problems could be native support of Caret Browsing. This is how this feature is currently implemented in Edge, Firefox and Safari.
 We propose to implement a way for users to enable Caret Browsing through pressing F7 and confirming on a subsequently shown dialog. Below are few examples where of how this is implemented in other browsers.
-Caret Browsing in Edge:
 
+Caret Browsing in Edge:
+![](edgeCaretBrosingPrompt.png)
+
+
+Caret Browsing in Firefox:
+![](firefoxCaretBrosingPrompt.png)
+
+Caret Browsing in Safari:
+
+In some cases, function keys are not available and so alternative shortcuts would be needed.
+For example, keyboard layout on Macs is inconsistent. Some keyboards have an F7 key, some have FN + F7 keys, and some have the function key space customized. While ideally we would want to keep the user experience consistent across platforms, it is not always easy to do. The alternative shortcut for Mac could be a new shortcut combination: CMD + Option + 7. 
+
+High-Level Overview of the implementation can be found (here)[].
+
+## Usage
+It is worth mentioning the Caret Browsing usage. The data in Edge showed small usage. Usage for the month of June across all releases of Edge appeared to be .0044%. That said, Caret Browsing will be broken completely for a vulnerable minority in the contexts that were mentioned above. 
+
+Questions/Comments/Alternative Solutions: adad@microsoft.com / glyuk@microsoft.com
