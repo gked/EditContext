@@ -6,10 +6,10 @@ With the introduction of variable fonts, WSS names will not be sufficient for ma
 
 Some Windows system fonts cannot be matched using this method, such as Segoe UI Semilight which is of Win32 name type. The switch from GDI to DWrite has also left some fonts inaccessible via their GDI name (such as Arial Bold). 
 
-Provide evidence or argument that this problem is important to solve
-This bug shows the faulty behavior.
+## Evidence
+[This bug](https://bugs.chromium.org/p/chromium/issues/detail?id=710539#) shows the faulty behavior.
 
-This bug also outlines issues selecting correct fonts.
+[This bug](https://bugs.chromium.org/p/chromium/issues/detail?id=710539#) also outlines issues selecting correct fonts.
 
 ## Goals
   - Enable the proper selection of Segoe UI Semilight 
