@@ -1,7 +1,8 @@
 ﻿# High Contrast Explainer
 
 Authors: [Rossen Atanassov](https://github.com/atanassov), [Alison Maher](https://github.com/amaher23)
-Last Updated: 2019-01-07
+
+Last Updated: 2019-01-18
 
 ## Overview
 
@@ -9,9 +10,9 @@ High contrast is a [Windows accessibility feature](https://docs.microsoft.com/en
 
 The Windows platform provides built-in [high contrast color themes](https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/high-contrast-themes) such as the more popular "black-on-white" and "white-on-black" themes. Besides the default themes, users can customize the colors and create their own themes. Applications can make use of these color themes and propagate them into their content model. In the case of the web browser, high contrast colors are propagated to website pages as a set of user agent styles, thus increasing readability of the text and allowing a coherent experience across the Windows OS and various applications.
 
-Microsoft Edge and IE are currently the only browsers to support the high contrast feature using Windows high contrast themes. When high contrast is enabled in Chrome, a popup is displayed prompting the user to install the [High Contrast extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph). This extension uses CSS/SVG filter effects overlaid on the entire webpage using its own predefined themes.
+Microsoft Edge and IE are currently the only browsers to support the high contrast feature using Windows high contrast themes. Many of the features described in this document were first shipped in 2012 with IE 10 and continue to use the ```-ms-``` vendor prefix for names and values.
 
-The advantage of enabling high contrast in the core platform, in comparison to the extension-based approach, is that it provides a more seamless experience for users with the rest of the Windows OS. This includes not just the browser-context, but also other Chromium-powered applications. 
+When high contrast is currently enabled in Chrome, a popup is displayed prompting the user to install the [High Contrast extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph). This extension uses CSS/SVG filter effects overlaid on the entire webpage using its own predefined themes. The advantage of enabling high contrast in the core platform, in comparison to the extension-based approach, is that it provides a more seamless experience for users with the rest of the Windows OS. This includes not just the browser-context, but also other Chromium-powered applications.
 
 ## User Flow
 
@@ -116,14 +117,14 @@ Given an element and a declaration from a CSS rule whose selector matches that e
 
 5. The rule is **not** defined in the default UA style sheet
 
-If all the above conditions are met, the computed color value of the CSS property is overeriden by a system color value.  
+If all of the above conditions are met, the computed color value of the CSS property is overridden by a system color value.  
 
 ## System Colors
 High contrast relies on system color keywords to fetch the appropriate theme colors, which are deprecated from the CSS Color standard in both [Level 3](https://drafts.csswg.org/css-color-3/#css2-system) and [Level 4](https://drafts.csswg.org/css-color-4/#system-colors). Blink currently does have support for these keywords, but they're currently mapped to hard-coded values instead of being plumbed through to the system color API. There is a derived class ```LayoutThemeWin```, but it currently doesn't add any functionality for this. Functionality can be added here to support the required system color keywords.
 
 In addition to existing CSS system color keywords, a new system color keyword would be added called ```hotlight``` that defines the system color for hyperlinks. It is important to track and store this system color because a developer might choose to unset high contrast styles for an ancestor of a link, but the high contrast link styles for descendent links must be preserved. 
 
-This system color keyword is currently supported by Microsoft Edge and IE.
+This system color keyword is currently supported by Microsoft Edge and IE. On Windows, the value for ```hotlight``` should map to the ```COLOR_HOTLIGHT``` system color. On other platforms, it should map to the default color used for links.
 
 #### Example usage
 
@@ -146,7 +147,7 @@ This backplate does not replace the background of an element, but rather is draw
 
 ![Exploded diagram showing three separate layers: element text contents, a backplate rectangle, and the element background](exploded-diagram.png)
 
-As the diagram demonstrates, an element's text contents are rendered in the WindowText system color, a backplate with a Window system color fill is drawn behind the text, and these are layered on top of the element background (background-color being filtered out). In the case of links, the text would instead use the appropriate high contrast link color.
+As the diagram demonstrates, an element's text content is rendered using the ```WindowText``` system color and a backplate with a ```Window``` system color fill is drawn behind the text. These are then layered on top of the element's background (with ```background-color``` being filtered out). In the case of links, the text would instead use the appropriate high contrast link color.
 
 ## Open questions
 
