@@ -25,41 +25,35 @@ last heading in the document has been reached.
 
 ## Proposed API
 
-A new attribute, `aria-virtualcontent`, indicates whether the element is a placeholder for virtualized content.
+A new attribute, `aria-virtualcontent`, indicates whether an element contains virtualized content. The default value is `none`.
 
-The default value is `none`. Any value other than `none` indicates that the element is a placeholder for virtualized content.
-*(Defining the attribute value to be an arbitrary string, rather than a Boolean value, leaves flexibility for the value to provide a
-hint about the nature of the virtualized content. ATs could use this information when implementing features such as "navigate to next
-heading" or "next table" etc.)*
+A **virtual content container** is any element that has a non-default value for `aria-virtualcontent`.
 
-The presence of a placeholder establishes a contract between the web page and ATs with the following requirements:
-* The web page ***MUST*** begin steps to realize the content no later than when the placeholder is scrolled into view.
-* The web page ***MUST*** insert the realized content as descendant(s) of the placeholder.
-*(This requirement enables an AT to draw a connection between the placeholder and realized content when other content mutations may be
-occurring.)*
+A **virtual content edge** is an edge of a virtual content container where the webpage can realize content.
 
-Note that a web page may partially realize content by first inserting the realized portion as described, and then inserting a new
-placeholder as the next sibling of the just-realized placeholder.
+The `aria-virtualcontent` attribute can have one of several keyword values, or multiple values separated by spaces, establishing which edges of the container are virtual content edges: `block-end`, `block-start`, `inline-end`, `inline-start`.
+*(Future expansion of the attribute value may provide hint(s) about the nature of the virtualized content. ATs could use this information when implementing features such as "navigate to next heading" or "next table" etc.)*
+
+Marking an element as a virtual content container establishes a contract between the web page and ATs. Specifically, the web page ***MUST*** begin steps to realize content no later than when a virtual content edge crosses into the viewport.
 
 ## Example Use
 
 ### Initial Conditions
+*This example assumes the default for English text: top-to-bottom block flow and left-to-right text direction.*
 * The web page is in a steady state.
-* An AT has its reading cursor on the last heading element in the markup.
-* An aria-virtualcontent placeholder is below the bottom edge of the view.
-* The web page has been authored such that virtualized content will be realized when the placeholder enters the view.
+* An element with `aria-virtualcontent="block-end"` is partially visible in the viewport. This virtual content container's bottom edge is below the bottom edge of the viewport.
+* The virtual content container contains several heading elements. An AT has its reading cursor on the last of these heading elements.
+* The web page has been authored such that virtualized content will be realized when the virtual content container's bottom edge crosses into the viewport.
 
 ### Scenario
 1. The user directs the AT to navigate to the next heading in the document.
-2. The AT searches the web page's accessibility representation. It finds the placeholder element.
-3. The AT reacts to the presence of the placeholder element. It might move its reading cursor to that placeholder, or it might leave
-the reading cursor as-is and simply announce to the user that another heading may be available.
-4. The AT asks the user agent to scroll the placeholder into view.
-*(Privacy note: APIs already exist on some operating systems that allow an AT to do this without fingerprinting the user.)*
-5. The user agent scrolls the placeholder into view and generates an onscroll event.
+2. The AT searches the web page's accessibility representation. It finds no subsequent heading.
+3. The AT searches the parent chain of the last heading element (i.e. the current location of its reading cursor). It finds the virtual content container.
+4. The AT reacts to the presence of the virtual content container. Typically it will search for a containing scroller, then ask the user agent to scroll such that the bottom edge of the virtual content container is in the viewport. *(Privacy note: APIs already exist on some operating systems that allow an AT to do this without fingerprinting the user.)* The AT might also choose to signal to the user that it has triggered such a scroll operation.
+5. The user agent scrolls as requested by the AT and generates an onscroll event.
 6. The web page reacts to the onscroll event. It requests and receives additional content. It might also announce to the user, via live
 region, that additional content is being loaded. 
-7. The web page inserts the new content into the DOM as a child of the placeholder element.
+7. The web page inserts the new content into the DOM at the bottom of the virtual content container. It might also announce to the user, via live region, that additional content is available.
 8. The user agent notifies the AT that the web page content has changed.
 9. The AT reacts to the notification. It might announce the availability of new content to the user. It might also initiate a new search
 of the webpage's accessibility representation for the next heading, followed by moving its reading cursor to that heading.
