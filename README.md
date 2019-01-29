@@ -11,6 +11,7 @@ This is a private repository where the Edge team can stage explainers to review 
 * [High Contrast](HighContrast/explainer.md)
 * [Shortcuts](WinRT/shortcuts/explainer.md)
 * [Streamlined Text Input (TSF1)](TSF1/explainer.md)
+* [Native Caret Browsing Support](CaretBrowsing/explainer.md)
 
 ### Graduated Explainers 
 (now in [Public Explainers Repo](https://github.com/MicrosoftEdge/MSEdgeExplainers))
