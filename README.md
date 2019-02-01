@@ -8,6 +8,7 @@ This is a private repository where the Edge team can stage explainers to review 
 * [EditContext](EditContext/explainer.md)
 * [FontSets](FontSets/explainer.md)
 * [Fragments](Fragments/explainer.md)
+* [ImageResource Color Scheme (part of the Web App Manifest)](ImageResource-color_scheme/explainer.md)
 * [High Contrast](HighContrast/explainer.md)
 * [Shortcuts](WinRT/shortcuts/explainer.md)
 * [Streamlined Text Input (TSF1)](TSF1/explainer.md)
