@@ -9,7 +9,6 @@ This is a private repository where the Edge team can stage explainers to review 
 * [FontSets](FontSets/explainer.md)
 * [Fragments](Fragments/explainer.md)
 * [ImageResource Color Scheme (part of the Web App Manifest)](ImageResource-color_scheme/explainer.md)
-* [High Contrast](HighContrast/explainer.md)
 * [Shortcuts](WinRT/shortcuts/explainer.md)
 * [Streamlined Text Input (TSF1)](TSF1/explainer.md)
 * [Native Caret Browsing Support](CaretBrowsing/explainer.md)
@@ -19,3 +18,4 @@ This is a private repository where the Edge team can stage explainers to review 
 
 * [UI Automation](UIA/explainer.md)
   * [UIA intent-to-implement](UIA/i2i.md)
+  * [High Contrast](HighContrast/explainer.md)
