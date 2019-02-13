@@ -5,7 +5,9 @@ With the rise of smartphones and devices with touch screens, customers depend on
 Advanced typing scenarios began to surface as IMEs became more popular. To streamline text input in IMEs, new text “intelligence services” emerged providing features such as autocorrection, suggestions, shapewriting, IME reconversion (after the composition has ended) and other input modalities.
 Text intelligence services are available in Windows and on popular mobile platforms such as Android. However, not all apps on Windows get these services automatically; apps using the IMM32 must specifically enable text intelligence services to light-up the new streamlined text input for users. This includes Chromium-based apps. 
 As it stands today, users of Chromium-based browsers are not able to enjoy text intelligence services that Windows Input services provides today. The following gifs showcase one example of suggestions and shapewriting features being present in Edge vs Chrome.
+
 Streamlined text input in Edge: ![](Edge_IME.gif)
+
 Chrome (using IMM32 on Windows desktop):![](Chrome_IME.gif)
 This proposal addresses the following use-cases:
 * Text intelligence - Suggestions appear on the SIP as you type. User can select the suggestions to insert them in edit controls.
