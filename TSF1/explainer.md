@@ -4,11 +4,11 @@ The Input Method Editor (IME) was originally intended to be used for typing lang
 With the rise of smartphones and devices with touch screens, customers depend on IMEs even more. In the absence of hardware keyboards, text input for all languages is entered through a Soft Input Panel (SIP), i.e., virtual keyboard which is powered by the IME.
 Advanced typing scenarios began to surface as IMEs became more popular. To streamline text input in IMEs, new text “intelligence services” emerged providing features such as autocorrection, suggestions, shapewriting, IME reconversion (after the composition has ended) and other input modalities.
 Text intelligence services are available in Windows and on mobile platforms such as Android and iOS. However, not all apps on Windows get these services automatically; apps using the IMM32 must specifically enable text intelligence services to light-up the new streamlined text input for users. This includes Chromium-based apps. 
-As it stands today, users of Chromium-based browsers are not able to enjoy text intelligence services that Windows Input services provides today. The following gifs showcase one example of suggestions and shapewriting features being present in Edge vs Chrome.
+As it stands today, users of Chromium-based browsers are not able to enjoy text intelligence services that Windows Input services provides today. The following gif showcases one example of suggestions and shapewriting features being present in Edge with TSF1 stack (left) vs Chrome with IMM32 stack (right).
 
-Streamlined text input in Edge: ![](Edge_IME.gif)
+![](Edge_Chrome_SIP.gif)
 
-Chrome (using IMM32 on Windows desktop):![](Chrome_IME.gif)
+
 This proposal addresses the following use-cases:
 * Text intelligence - Suggestions appear on the SIP as you type. User can select the suggestions to insert them in edit controls.
 * Swipe keyboard – User can use shapewriting to input text.
