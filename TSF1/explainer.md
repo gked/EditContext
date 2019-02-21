@@ -19,12 +19,12 @@ The proposal targets the following use-cases:
 ### Non-Goals:
 
 This proposal would not completely replace support for IMM32 on Windows as it is still used by some third party plugins (Flash). We're planning to follow up with the Chromium input team and define  long-term IMM32 plans once we land TSF 1.0.
-This proposal is not aiming to address on-screen keyboard issues on platforms that don't have TSF 1.0 or enable text intelligence services on those platform. 
+This proposal is not aiming to address on-screen keyboard issues on platforms that don't have TSF 1.0 or don't have text intelligence services enabled.
 
 ## Solution:
 
 We would like to improve Chromium text input on Windows by adding support for TSF 1.0. This would enable text intelligence services and enable input methods, already supported on Windows to Chromium. We identified a work in progress [crbug.com/657623](https://bugs.chromium.org/p/chromium/issues/detail?id=657623) and we beleive that the work there is aligned with our proposal.
-TSF 1.0 is available starting with Windows 7 and should cover most current Windows release that are still in use.
+TSF 1.0 is available starting with Windows 7 and should cover most current Windows releases that are still in use.
 
 ## Alternatives considered:
 
