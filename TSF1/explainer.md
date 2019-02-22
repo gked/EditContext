@@ -1,25 +1,28 @@
-# Streamlining Text Input for Touch Keyboards, IMEs with TSF1
+# Streamlining Text Input for Touch Keyboards & IMEs with TSF1
 
 ## Motivation:
 
-Text Services Framework (TSF) enables a TSF-enabled app to receive text input from any number of devices or sources including IMEs (Input Method Editors), on-screen keyboards. 
-TSF makes it possible for apps to levergare new text intelligence services, such as autocorrection, suggestions, shapewriting, IME reconversion (after the composition has ended) and other input modalities. A lot of those features are a given in text input scenarios on mobile devices and can bring significant positive impact on Desktop user text input. 
-However, not all apps on Windows get these services by default. Apps built on top of legacy IMM32 (Input Method Manager) framework must do additional work to enable text intelligence services to light-up the new streamlined text input. This currently includes Chromium-based apps. 
-As it stands today, users of Chromium-based browsers are not able to take advantage of the text intelligence services that TSF provides today. The sample below showcases just one example where suggestions and shapewriting features are available in Microsoft Edge (left) and not available to Chrome (right).
+Windows Text Services Framework (TSF) enables a TSF-enabled app to receive text input from a number of devices or sources including IMEs (Input Method Editors) and on-screen keyboards. 
+
+TSF makes it possible for apps to leverage new text intelligence services, such as autocorrection, text suggestions as you type, shapewriting that lets you swipe over keys without releasing your finger to type, IME reconversion after composition has ended, and other input modalities. Many customers have come to expect these features on mobile devices. This work will help bring similar capabilities to touch enabled Windows devices.
+
+Not all apps on Windows get these services by default. Apps built on top of legacy IMM32 (Input Method Manager) framework must do additional work to enable text intelligence services to light-up the new streamlined text input. This currently includes Chromium-based browsers. 
+
+As it stands today, users of Chromium-based browsers are not able to take advantage of the text intelligence services that TSF provides today. The sample below showcases just one example where suggestions and shapewriting features are available in the existing version of Microsoft Edge (left) and not available to Chrome (right).
 
 ![](Edge_Chrome_SIP.gif)
 
 ## Proposal:
 
 The proposal targets the following use-cases:
-* Enable text intelligence services - allows user to select the suggestions as they type;
+* Enable text intelligence services - allows user to select text suggestions as they type;
 * Swipe keyboard – allow user to use shapewriting for text input;
 * Enable reconversion after commit – for languages that support reconversion, allow user to select committed text and reconvert it.
 
 ### Non-Goals:
 
-This proposal would not completely replace support for IMM32 on Windows as it is still used by some third party plugins (Flash). We're planning to follow up with the Chromium input team and define  long-term IMM32 plans once we land TSF 1.0.
-This proposal is not aiming to address on-screen keyboard issues on platforms that don't have TSF 1.0 or don't have text intelligence services enabled.
+This proposal will not completely replace support for IMM32 on Windows as it is still used by some third party plugins (Flash). We're planning to follow up with the Chromium input team and define long-term IMM32 plans once we land TSF 1.0.
+This proposal is not planning on addressing on-screen keyboard issues on platforms that don't have TSF 1.0 or don't have text intelligence services enabled.
 
 ## Solution:
 
