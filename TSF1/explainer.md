@@ -42,9 +42,9 @@ We welcome your feedback and opinion on ways we can help improve Chromium text i
 
 ## Links:
 
-Issue 657623: Using TSF instead of IMM32 in the IMF on Windows: https://crbug.com/657623
-About Text Services Framework: https://docs.microsoft.com/en-us/windows/desktop/TSF/about-text-services-framework
-Text Services Framework Reference: https://docs.microsoft.com/en-us/windows/desktop/TSF/text-services-framework-reference
+* Issue 657623: Using TSF instead of IMM32 in the IMF on Windows: https://crbug.com/657623
+* About Text Services Framework: https://docs.microsoft.com/en-us/windows/desktop/TSF/about-text-services-framework
+* Text Services Framework Reference: https://docs.microsoft.com/en-us/windows/desktop/TSF/text-services-framework-reference
 
 
 
