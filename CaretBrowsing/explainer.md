@@ -25,7 +25,7 @@ This proposal targets the following use cases:
 Native caret browsing doesn't aim to replace extensions, they would continue to work as they do today having the first opportunity to handle default F7 actiovation shortcut.
 
 ## Solution:
-The solution propsed in this explainer is to introduce native caret browsing in Chromium, a feature that is available in Mozilla Firefox, Microsoft Edge and Internet Explorer.
+The solution proposed in this explainer is to introduce native caret browsing in Chromium, a feature that is available in Mozilla Firefox, Microsoft Edge and Internet Explorer.
 
 In order to do that we suggest to implement a current common activation shortcut: F7 and confirm caret browsing activation with a dialog. 
 
@@ -42,5 +42,5 @@ We welcome your feedback and opinion on ways we can help improve Chromium caret 
 
 ## Links
 
-Caret Navigation: https://en.wikipedia.org/wiki/Caret_navigation
-Caret Browsing extension in Chrome Web Store: https://chrome.google.com/webstore/detail/caret-browsing/fklpgenihifpccgiifchnihilipmbffg
+* Caret Navigation: https://en.wikipedia.org/wiki/Caret_navigation
+* Caret Browsing extension in Chrome Web Store: https://chrome.google.com/webstore/detail/caret-browsing/fklpgenihifpccgiifchnihilipmbffg
