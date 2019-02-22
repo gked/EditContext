@@ -1,28 +1,46 @@
-# Native Caret Browsing Support
-## Introduction
-Caret Browsing enables users to navigate through web content in the browser using keyboard navigation keys, such as arrow keys for character level navigation and CTRL + arrow keys for word level navigation. Caret browsing can unblock users who do not have a mouse or other pointer device, such that they have the full range of text navigation and selection functionality within web content. With caret browsing, users can explore text as various fidelities, such as line by line or character by character.
-Below is the gif showing the caret browsing in action:
+# Proposal: Native Caret browsing
+
+## Motivation:
+Caret browsing enables users to navigate web content using the keyboard keys and common shortcuts for word and line level navigation. Caret browsing enables full range of text navigation and selection functionality within web content without additional pointing devices like mice, trackpads or touchpads. 
+
+Sample caret browsing experience in Microsoft Edge on Wikipedia:
 ![](CB_Example.gif)
 
-## Use Cases
-In Chromium, users can download caret browsing [extension](https://chrome.google.com/webstore/detail/caret-browsing/fklpgenihifpccgiifchnihilipmbffg) from Chrome’s Web Store. The are two problems with this approach. 
-First, extensions are not always available for use in some organizations due to enterprise policies, in cases when users navigate the web in “Incognito” mode, or when Guest profile is used. Second, extensions may be more difficult to be discovered or that it may take too many steps to enable the desired behavior. This is especially true for people with limited abilities or those who are not accustomed to be using keyboard in the absence of a mouse.
-To elaborate on the first problem with extension-powered caret browsing is that some Enterprises do not allow installing extensions. A good example of such a case can be seen [here](https://crbug.com/611798). The bug opened on Chromium by a consortium of Canadian banks where they seem restrict or block access to extensions.
-Use cases with Incognito mode and Guest profile would also lack support for caret browsing completely, thus, making browsing experience effectively unusable.
-Discoverability of the extension also lacks user friendliness. In order to install caret browsing extension today, you must navigate to the Accessibility section in the Settings page, follow the link to the Extensions Store where you can download the extension, restart the browser, and finally, use caret browsing. This may be perceived as bad user experience, especially by persons with different abilities.
-## Goals
-The goal for this proposal is to allow Chromium-based browsers users to enable caret browsing mode without needing to install extensions.
-## Non-Goals
-We are not proposing to replace extensions approach altogether. Existing extension users will still be able to use it.
-## Solutions
-One of the possible solutions to this problem could be native support of Caret Browsing. This is how this feature is currently implemented in Edge, Firefox and Internet Explorer.
-We propose to implement a way for users to enable caret browsing through pressing F7 and confirming on a subsequently shown dialog. Below are a few examples of how this is implemented in other browsers.
-Caret Browsing in Edge:
+### Current problems:
+Today Chromium users can download Caret Browsing extension from the Chrome Web Store. The are two problems with this approach:
 
+* Extensions might be blocked in a work environment due to enterprise policies. See [Issue 611798] (https://crbug.com/611798);
+* Extensions might not be available in "Incognito" tabs, or when Guest profile is used;
+* There are additional barriers for users of all abilities, since they need to find and install an extension and the functionality is not readily available when it might be needed;
+* Applications that use Chromium don't have ready to use solution in the engine today. 
+
+## Proposal:
+This proposal targets the following use cases:
+
+* Enable native caret browsing in all contexts including enterprises, "Incognito" tabs and Guest profile;
+* Add ability for Chromium application to enable caret browsing for their users without workarounds;
+* Make caret browsing available to users all the time out of the box.
+
+### Non-Goals
+Native caret browsing doesn't aim to replace extensions, they would continue to work as they do today having the first opportunity to handle default F7 actiovation shortcut.
+
+## Solution:
+The solution proposed in this explainer is to introduce native caret browsing in Chromium, a feature that is available in Mozilla Firefox, Microsoft Edge and Internet Explorer.
+
+In order to do that we suggest to implement a current common activation shortcut: F7 and confirm caret browsing activation with a dialog. 
+
+Caret browsing activation confimation in Microsoft Edge:
 ![](edgeCaretBrosingPrompt.png)
 
-Caret Browsing in Firefox:
-
+Caret browsing activation confimation in Mozilla Firefox:
 ![](firefoxCaretBrosingPrompt.png)
-In some cases, function keys may not be available and so alternative shortcuts would be needed.
-For example, keyboard layout on Mac is inconsistent. Some keyboards have an F7 key, some have FN + F7 keys, and some have the function key space customized. While ideally we would want to keep the user experience consistent across platforms, it is not always easy to do. The alternative shortcut for Mac could be a new shortcut combination: CMD + Option + 7. 
+
+In some cases, function keys may not be available and so alternative shortcuts might be needed. For example, the alternative shortcut for macOS could be a new combination: Command + Option + 7. 
+
+We welcome your feedback and opinion on ways we can help improve Chromium caret navigation and browsing in the future! 
+
+
+## Links
+
+* Caret Navigation: https://en.wikipedia.org/wiki/Caret_navigation
+* Caret Browsing extension in Chrome Web Store: https://chrome.google.com/webstore/detail/caret-browsing/fklpgenihifpccgiifchnihilipmbffg
