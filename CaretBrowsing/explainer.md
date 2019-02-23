@@ -4,7 +4,7 @@
 Caret browsing enables users to navigate web content using the keyboard keys and common shortcuts for character, word and line level navigation. Caret browsing enables full range of text navigation and selection functionality within web content without additional pointing devices like mice, trackpads and touchpads. 
 
 Sample caret browsing experience in Microsoft Edge on Wikipedia:
-![](CB_Example.gif)
+![Visual sample of using caret browsing to explore Wikipedia front page](CB_Example.gif)
 
 ### Current problems:
 Today Chromium users can download Caret Browsing extension from the Chrome Web Store. The are two problems with this approach:
@@ -30,10 +30,10 @@ The solution proposed in this explainer is to introduce native caret browsing in
 In order to do that we suggest to implement a current common activation shortcut: F7 and confirm caret browsing activation with a dialog. 
 
 Caret browsing activation confirmation in Microsoft Edge:
-![](edgeCaretBrosingPrompt.png)
+![Microsoft Edge browser dialog that asks user to confirm enabling caret browsing and allow to set the preference to never ask again in the future](edgeCaretBrosingPrompt.png)
 
 Caret browsing activation confirmation in Mozilla Firefox:
-![](firefoxCaretBrosingPrompt.png)
+![Mozilla Firefox browser dialog that asks user to confirm enabling caret browsing and allow to set the preference to never ask again in the future](firefoxCaretBrosingPrompt.png)
 
 In some cases, function keys may not be available and so alternative shortcuts might be needed. For example, the alternative shortcut for macOS could be a new combination: Command + Option + 7. 
 
