@@ -1,4 +1,4 @@
-# Streamlining Text Input for Touch Keyboards & IMEs with TSF1
+# Streamlining Text Input for Touch Keyboards & IMEs with TSF 1.0
 
 ## Motivation:
 
