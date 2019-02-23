@@ -12,14 +12,14 @@ Today Chromium users can download Caret Browsing extension from the Chrome Web S
 * Extensions might be blocked in a work environment due to enterprise policies. See [Issue 611798] (https://crbug.com/611798);
 * Extensions might not be available in "Incognito" tabs, or when Guest profile is used;
 * There are additional barriers for users of all abilities, since they need to find and install an extension and the functionality is not readily available when it might be needed;
-* Applications that use Chromium don't have the capability to use native caret browsing in the engine today. 
+* Applications that use Chromium don't have the platform capability to enable native caret browsing. 
 
 ## Proposal:
 This proposal targets the following use cases:
 
 * Enable native caret browsing in all contexts including enterprises, "Incognito" tabs and Guest profile;
-* Add ability for Chromium application to enable caret browsing for their users without workarounds;
-* Make caret browsing available to users all the time out of the box.
+* Make caret browsing available to users all the time out of the box in the browser;
+* Add a platform capability, so that Chromium applications can enable caret browsing for their users with small amount of work in the application.
 
 ### Non-Goals
 Native caret browsing doesn't aim to replace extensions, they would continue to work as they do today having the first opportunity to handle default F7 activation shortcut.
@@ -44,3 +44,4 @@ We welcome your feedback and opinion on ways we can help improve Chromium caret 
 
 * Caret Navigation: https://en.wikipedia.org/wiki/Caret_navigation
 * Caret Browsing extension in Chrome Web Store: https://chrome.google.com/webstore/detail/caret-browsing/fklpgenihifpccgiifchnihilipmbffg
+* Keyboard shortcuts in Windows (Copy, paste, and other general keyboard shortcuts): https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts
