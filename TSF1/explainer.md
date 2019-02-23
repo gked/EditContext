@@ -10,7 +10,7 @@ Not all apps on Windows get these services by default. Apps built on top of lega
 
 As it stands today, users of Chromium-based browsers are not able to take advantage of the text intelligence services that TSF provides today. The sample below showcases just one example where suggestions and shapewriting features are available in the existing version of Microsoft Edge (left) and not available to Chrome (right).
 
-![](Edge_Chrome_SIP.gif)
+![Visual representation of text intelligence services being available in Microsoft Edge and not availabe Google Chrome, when using on-screen keyboard in Windows 10](Edge_Chrome_SIP.gif)
 
 ## Proposal:
 
