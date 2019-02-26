@@ -70,6 +70,13 @@ This menu provides direct access to:
 * Access the user’s notifications; and
 * Access the user’s direct messages
 
+## Customer validation
+
+* **Twitter** is actively using Windows’ Jump Lists feature in their PWA via WinRT (see [the above example](#twitter)).
+* **Starbucks** has also expressed interest in increasing re-engagement with their PWA by providing quick access to options like:
+  * Pay with your Starbucks card,
+  * Place an order, and
+  * Find the closest store.
 
 ## API Proposal
 
