@@ -60,7 +60,7 @@ The IndieWeb is in favor of re-purposing the existing fragment identifier (a sin
 
 An earlier proposal from the IndieWeb community involved using a double hash prefix. The [URL spec](https://tools.ietf.org/html/rfc3986#appendix-A) does not allow for hash characters in a fragment, so these links will fail strict validation. HTML5 also allows for the hash character to be used in an id attribute, leading to some potential confusion for the User Agent when dealing with a link that references both an existing anchor _and_ arbitrary text.
 
-### `#search=arbitrary%20text%20search`
+### `#search=arbitrary%20text%20search` (Recommended)
 
 This proposal takes a page from the direction Media Fragments have gone via a name-value component in the fragment. This would enable User Agent’s to disambiguate anchor references from arbitrary text searches.
 
