@@ -34,7 +34,9 @@ A **virtual content edge** is an edge of a virtual content container where the w
 The `aria-virtualcontent` attribute can have one of several keyword values, or multiple values separated by spaces, establishing which edges of the container are virtual content edges: `block-end`, `block-start`, `inline-end`, `inline-start`.
 *(Future expansion of the attribute value may provide hint(s) about the nature of the virtualized content. ATs could use this information when implementing features such as "navigate to next heading" or "next table" etc.)*
 
-Marking an element as a virtual content container establishes a contract between the web page and ATs. Specifically, the web page ***MUST*** begin steps to realize content no later than when a virtual content edge crosses into the viewport.
+Marking an element as a virtual content container establishes a contract between the web page and ATs. Specifically:
+* If the virtual content container is also a [scroll container](https://www.w3.org/TR/css-overflow-3/#scroll-container), the web page ***MUST*** begin steps to realize content no later than when the virtual content container is scrolled to a limit where a virtual content edge exists.
+* If the virtual content container is not a [scroll container](https://www.w3.org/TR/css-overflow-3/#scroll-container), the web page ***MUST*** begin steps to realize content no later than when a virtual content edge enters the [scrollport](https://www.w3.org/TR/css-overflow-3/#scrollport) of its nearest ancestor [scroll container](https://www.w3.org/TR/css-overflow-3/#scroll-container).
 
 ## Example Use
 
