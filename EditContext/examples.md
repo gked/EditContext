@@ -25,7 +25,7 @@ window.requestAnimationFrame(() => {
 editContainer.focus();
 ```
 
-Assuming ```model``` represents the document model for the editable content, and ```view``` represents an object that produces an HTML view of the document (see [Code Appendix](#code-appendix) for more details on example implementations), register for textupdate and keyboard related events (note that keydown/keyup are still delivered to the edit container, i.e. the activeElement):
+Assuming ```model``` represents the document model for the editable content, and ```view``` represents an object that produces an HTML view of the document, registers for textupdate and keyboard related events (note that keydown/keyup are still delivered to the edit container, i.e. the activeElement):
 
 ```javascript
 editContainer.addEventListener("keydown", e => {
@@ -98,7 +98,6 @@ class EditModel {
         this.setSelection(newSelection.start, newSelection.end);
         this.editContext.selectionChanged(newSelection.start, newSelection.end);
     }
-
 
     deleteCharacters(direction) {
         if (this.selection.start !== this.selection.end) {
