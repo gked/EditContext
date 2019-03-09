@@ -40,25 +40,86 @@ Marking an element as a virtual content container establishes a contract between
 
 ## Example Use
 
-### Initial Conditions
-*This example assumes the default for English text: top-to-bottom block flow and left-to-right text direction.*
-* The web page is in a steady state.
-* An element with `aria-virtualcontent="block-end"` is partially visible in the viewport. This virtual content container's bottom edge is below the bottom edge of the viewport.
-* The virtual content container contains several heading elements. An AT has its reading cursor on the last of these heading elements.
-* The web page has been authored such that virtualized content will be realized when the virtual content container's bottom edge crosses into the viewport.
+The following simplified example shows one potential usage pattern for `aria-virtualcontent`.
 
-### Scenario
+```
+<html>
+<head>
+  <script src="virtualcontent.js"></script>
+</head>
+<body>
+  <main id="main" aria-virtualcontent="block-end">
+    <h1>Section 1</h1>
+      ...
+    <h1>Section 2</h1>
+      <h2>Section 2.1</h2>
+      ...
+    <!-- etc... --->
+    <div id="loading_spinner" role="presentation" style="visibility:hidden">
+      <img src="loading.gif" role="presentation">
+    </div>
+  </main>
+  <div id="announcer" aria-live="assertive" style="width: 0; height: 0; overflow: hidden"></div>
+</body>
+</html>
+```
+
+virtualcontent.js:
+```
+// Issues a request to the server for the next section of content.
+function begin_load_next_section() {
+  // Issue request to server.
+  // ...
+}
+
+// Callback triggered when the server responds with next section of content.
+function end_load_next_section() {
+  // Insert response payload into the DOM.
+  document.getElementById("main").appendChild(...);
+
+  // Signal to the user that we're done loading.
+  document.getElementById("loading_spinner").style.visibility = "hidden";
+  document.getElementById("announcer").textContent = "Next section loaded.";
+}
+
+// Listens for scroll events and responds accordingly.
+function on_scroll_changed() {
+  // Check whether the user has scrolled to the bottom of the page.
+  let target = document.documentElement;
+  let top = (target && target.scrollTop) || document.body.scrollTop;
+  if (top + target.clientHeight >= target.scrollHeight) {
+    // Issue request to the server.
+    begin_load_next_section();
+
+    // Signal to the user that we're loading more content.
+    document.getElementById("loading_spinner").style.visibility = "visible";
+    document.getElementById("announcer").textContent = "Loading additional content.";
+  }
+}
+
+// Initialize scroll handler.
+window.addEventListener("scroll", on_scroll_changed);
+```
+
+### Walkthrough
+
+#### Initial Conditions
+* The web page is in a steady state.
+* The `main` element is partially visible in the viewport. This element's bottom edge is below the bottom edge of the viewport. Because it has `aria-virtualcontent` set, it is a virtual content container.
+* An AT has its reading cursor on the last heading element inside the virtual content container.
+
+#### Scenario
 1. The user directs the AT to navigate to the next heading in the document.
-2. The AT searches the web page's accessibility representation. It finds no subsequent heading.
-3. The AT searches the parent chain of the last heading element (i.e. the current location of its reading cursor). It finds the virtual content container.
-4. The AT reacts to the presence of the virtual content container. Typically it will search for a containing scroller, then ask the user agent to scroll such that the bottom edge of the virtual content container is in the viewport. *(Privacy note: APIs already exist on some operating systems that allow an AT to do this without fingerprinting the user.)* The AT might also choose to signal to the user that it has triggered such a scroll operation.
-5. The user agent scrolls as requested by the AT and generates an onscroll event.
-6. The web page reacts to the onscroll event. It requests and receives additional content. It might also announce to the user, via live
-region, that additional content is being loaded. 
-7. The web page inserts the new content into the DOM at the bottom of the virtual content container. It might also announce to the user, via live region, that additional content is available.
-8. The user agent notifies the AT that the web page content has changed.
-9. The AT reacts to the notification. It might announce the availability of new content to the user. It might also initiate a new search
-of the webpage's accessibility representation for the next heading, followed by moving its reading cursor to that heading.
+2. Using the platform accessibility API, the AT searches the web page for a subsequent heading. It finds none.
+3. The AT searches the parent chain of the last heading element (i.e. the current location of its reading cursor). It finds the `main` element and sees that it is a virtual content container.
+4. The AT reacts to the presence of a virtual content container by looking for a scrollable element, starting with the virtual content container itself and searching the parent chain from there. It finds the scroller for the document itself and asks the user agent to scroll to the bottom of the page. *(Privacy note: APIs already exist on some operating systems that allow an AT to do this without fingerprinting the user.)*
+5. The user agent scrolls as requested by the AT and generates a scroll event.
+6. The `on_scroll_changed()` function is called in reaction to the scroll event. Script code issues a request for additional content, displays a loading spinner, and announces that additional content is being loaded using an ARIA live region.
+7. When additional content is received, the `end_load_next_section()` function is called. Script code inserts the new content into the DOM at the bottom of the virtual content container, hides the loading spinner, and announces to the user that additional content is available.
+8. The user agent notifies the platform accessibility API that the web page content has changed.
+9. The user hears the announcement that new content has been loaded. He/she once again directs the AT to navigate to the next heading.
+10. Using the platform accessibility API, the AT searches the web page for a subsequent heading.
+11. The AT finds a heading in the newly loaded content, moves its reading cursor to that heading, and reads the heading to the user.
 
 ## Alternate solutions
 
