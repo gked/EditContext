@@ -1,5 +1,5 @@
 # EditContext API Explained
-This document proposes a new API for integrating web applications with the input services of the operating system to allow clean separation of document object model and data model.
+This document proposes a new API for integrating web applications with the input services of an operating system to allow clean separation of document object model and data model.
 
 ## Motivation:
 The built-in edit controls of the browser are no longer sufficient as the editing experience has evolved from filling in form data to rich editing experiences in web applications like CKEditor, GSuite, TinyMCE, Office 365, Visual Studio Online and others.
@@ -10,14 +10,12 @@ Despite their shortcomings, contenteditable and the good old textarea element ar
 
 Each approach comes with its own set of drawbacks that include
 1. Contenteditable approach limits the app's ability to enhance the view, as the view (i.e. the DOM) is also the authoritative source on the contents of the document being edited.
-1. Additional issue with using contenteditable is that the editing operations built-in to the browser are designed to edit HTML, which produces results that are unrelated to the change in the actual editable document.  For example, typing an 'x' after public in the document shown in "Use Cases" section below when using a contenteditable element would continue with the preceding blue color making "publicx" look like a keyword. To avoid the issue, authors may prevent the default handling of input (e.g. on keydown). This can be done, but only for regular keyboard input and when a composition is not in progress, specifically, **there is no way to prevent modification of the DOM during composition without  disabling composition**.
+1. Additional issue with using contenteditable is that the editing operations built-in to the browser are designed to edit HTML, which produces results that are unrelated to the change in the actual editable document.  For example, shown in "Use Cases" section below, typing an 'x' after keyword `public` in the document when using a contenteditable element would continue with the preceding blue color making "publicx" look like a keyword. To avoid the issue, authors may prevent the default handling of input (e.g. on keydown). This can be done, but only for regular keyboard input and when a composition is not in progress, specifically, **there is no way to prevent modification of the DOM during composition without  disabling composition**.
 1. In textarea approach, native selection cannot be used as part of the view (because its being used in the hidden textarea instead), which adds complexity (since the editing app must now build its own representation of selection and the caret), and (unless rebuilt by the editing app) eliminates specialized experiences for touch where selection handles and other affordances can be supplied for a better editing experience.
 1. When the location of selection in the textarea doesn't perfectly match the location of selection in the view, it creates problems when software keyboards attempt to reposition the viewport to where the system thinks editing is occurring.  Input method-specific UI meant to be positioned nearby the selection, for example the UI presenting candidates for phonetically composed text, can also be negatively impacted (in that they will be placed not nearby the composed text in the view).
 1. Accessibility is negatively impacted. Assistive technologies may highlight the textarea to visually indicate what content the assisted experience applies to. Given that the textarea is likely hidden and not part of the view, these visual indicators will likely appear in the wrong location.  Beyond highlighting, the model for accessibility should often match the view and not the portion of the document copied into a textarea. For assistive technology that reads the text of the document, the wrong content may be read as a result.
 
-To summarize: EditContext API will help to alleviate the following problems:
-* Code complexity which in turn would increase developer productivity.
-* A number of composition scenarios. e.g., long running composition in collaboration scenarios.
+**To summarize, EditContext API will help reduce code complexity in JavaScript editors by decoupling view and data model in a browser which in turn will increase developer productivity. This API will also resolve a number of composition scenarios. e.g., long running composition in collaboration scenarios.**
 
 
 ## Goals:
