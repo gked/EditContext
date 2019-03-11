@@ -30,7 +30,7 @@ Most websites (and, by extension, progressive web apps) have a handful of key ta
 
 ## Examples
 
-### PlayerFM Shortcuts in Android
+### PlayerFM "Shortcuts" in Android
 
 <figure id="playerfm">
 
@@ -45,7 +45,7 @@ This menu provides access to the following app functionality:
 * Search; and
 * Discover - browse available & promoted podcasts.
 
-### Slack’s Dock Menu in macOS
+### Slack’s "Dock Menu" in macOS
 
 <figure id="slack">
 
@@ -55,7 +55,7 @@ This menu provides access to the following app functionality:
 
 This menu provides a list of Slack “workspaces” the user is signed into, followed by a link to “Sign into another workspace” and some standard macOS system-level options.
 
-### Twitter’s Jump List in Windows 10
+### Twitter’s "Jump List" in Windows 10
 
 <figure id="twitter">
 
@@ -72,7 +72,7 @@ This menu provides direct access to:
 
 ## Customer validation
 
-* **Twitter** is actively using Windows’ Jump Lists feature in their PWA via WinRT (see [the above example](#twitter)).
+* **Twitter** is actively using [Windows’ "Jump Lists" feature](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.StartScreen.JumpList) in their PWA via WinRT (see [the above example](#twitter)).
 * **Starbucks** has also expressed interest in increasing re-engagement with their PWA by providing quick access to options like:
   * Pay with your Starbucks card,
   * Place an order, and
@@ -161,15 +161,15 @@ This section describes a possible treatment on each major OS. User agents are fr
 
 ### Android
 
-In Android, shortcut activation is triggered via a long press.  Android allows the list to be supplemented at runtime via Dynamic Shortcuts and allows users to rearrange and "pin" shortcut items.
+In Android, shortcut activation is triggered via a long press.  Android allows the static shortcut list to be supplemented at runtime via Dynamic Shortcuts and allows users to rearrange and "pin" shortcut items. ([Documentation](https://developer.android.com/guide/topics/ui/shortcuts/creating-shortcuts))
 
 ### iOS
 
-In iOS, a hard press (3D Touch) exposes the menu items (iOS 9.0+ on 3D touch-capable devices). iOS also enables a subtitle and has a hard limit of 4 items.
+In iOS, a hard press (3D Touch) exposes the application shortcuts (iOS 9.0+ on 3D touch-capable devices). iOS also enables a subtitle and has a hard limit of 4 items. ([Documentation](https://developer.apple.com/library/archive/samplecode/ApplicationShortcuts/Introduction/Intro.html#//apple_ref/doc/uid/TP40016545))
 
 ### macOS/Windows/Linux GUI/etc.
 
-In most OSes, this context menu is triggered by right clicking (or two finger tapping) on the icon.  Windows calls these Jump Lists and allows each shortcut item to have a description. macOS refers to these shortcuts as the Dock Menu.
+In most OSes, this context menu is triggered by right clicking (or two finger tapping) on the icon.  Windows calls these "Jump Lists" and allows each shortcut item to have a description ([Documentation](https://docs.microsoft.com/en-us/uwp/api/windows.ui.startscreen.jumplist)). In macOS these shortcuts are referred to as the "Dock Menu" ([Documentation](https://developer.apple.com/design/human-interface-guidelines/macos/menus/dock-menus/)).
 
 ### Electron
 
