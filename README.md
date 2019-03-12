@@ -14,8 +14,8 @@ This is a private repository where the Edge team can stage explainers to review 
 ### 🎓 Graduated Explainers (newest alumni ⬆)
 (now in [Public Explainers Repo](https://github.com/MicrosoftEdge/MSEdgeExplainers))
 
-* [Native Caret Browsing Support](CaretBrowsing/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/CaretBrowsing/explainer.md)) - Graduated 25 February 2019
-* [Streamlined Text Input (TSF1)](TSF1/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TSF1/explainer.md)) - Graduated 25 February 2019
-* [High Contrast](HighContrast/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/HighContrast/explainer.md)) - Graduated 29 January 2019
-* [UI Automation](UIA/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/UIA/explainer.md)) - Graduated 6 December 2018
-  * [UIA intent-to-implement](UIA/i2i.md)
+* [Native Caret Browsing Support](Staged/CaretBrowsing/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/CaretBrowsing/explainer.md)) - Graduated 25 February 2019
+* [Streamlined Text Input (TSF1)](Staged/TSF1/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TSF1/explainer.md)) - Graduated 25 February 2019
+* [High Contrast](Staged/HighContrast/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/HighContrast/explainer.md)) - Graduated 29 January 2019
+* [UI Automation](Staged/UIA/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/UIA/explainer.md)) - Graduated 6 December 2018
+  * [UIA intent-to-implement](Staged/UIA/i2i.md)
