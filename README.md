@@ -9,6 +9,7 @@ This is a private repository where the Edge team can stage explainers to review 
 * [FontSets](FontSets/explainer.md)
 * [Fragments](Fragments/explainer.md)
 * [ImageResource Color Scheme (part of the Web App Manifest)](ImageResource-color_scheme/explainer.md)
+* [Native Caret Browsing](CaretBrowsing) (explainer already stages, these are the i21 and design docs)
 * [Shortcuts](Shortcuts/explainer.md)
 
 ### 🎓 Graduated Explainers (newest alumni ⬆)
