@@ -21,5 +21,5 @@ Microsoft has received feedback to retain support for EUDC for line-of-business 
   - A common scenario is a user in Chinese or Japanese whose name is not representable utilizing the base font character set,      EUDC allows the user to represent their name in text format
 	
 ## Proposed Solution
-
+ - The proposed solution hooks into the font fallback loop. On Windows, the fallback loop will look at CSS 'font-family' specified fonts  before resorting to system fonts. This solution enables a check for EUDC fonts after system fonts have been considered. If we arrive at this stage and we are requesting a character in the PUA, a call to the browser process will be made. In the browser process, Skia will be updated to call the DWrite function that returns the system EUDC collection. 
 
