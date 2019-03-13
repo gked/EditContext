@@ -26,7 +26,7 @@ For example, consider [the VS Code Insiders logo as displayed in Windows 10](#vs
 
 In the default colors of Windows 10 (and Dark Mode), the taskbar is black and the green color of the icon has a contrast ratio of 5.84:1, which is enough to meet WCAG AA for user interface components. By contrast, in Windows 10’s Light Mode, the very same logo is set against a medium grey background and only achieves a conrast ratio of 1.56:1. This is but one example. Enabling developers to indicate different image asset options for different color schemes would help avoid this issue.
 
-In their implementation of Windows’ Jump List feature, [the Twitter PWA imeplements white PNG icons](#twitter):
+In their implementation of Windows’ Jump List feature, [the Twitter PWA implements white PNG icons](#twitter):
 
 <figure id="twitter-dark">
 
@@ -34,7 +34,7 @@ In their implementation of Windows’ Jump List feature, [the Twitter PWA imeple
 
 </figure>
 
-When in Light Mode, the Windows operating system automatically converts the white icons to black to keep them legible:
+When in Light Mode, Windows 10 automatically converts the white icons to black to keep them legible:
 
 <figure id="twitter-light">
 
@@ -72,4 +72,4 @@ Without a defined `color_scheme`, the value of "no-preference" would be assigned
 
 1. Would it make sense to use the existing [`purpose` member of an <code>ImageResource</code>](https://w3c.github.io/manifest/#dom-imageresource-purpose)?
 2. With SVGs, might it be possible to pick up foreground and background colors directly from the OS (along the lines of `currentColor`)?
-3. If an author speficies that they have "no preference" for an icon, does that indicate than an OS should feel empowered to automatically mutate the colors to try to provide the most readable image? (For example: the white shortcut icons being automagically reversed in Windows.)
+3. If an author specifies that they have "no preference" for an icon, does that indicate than an OS should feel empowered to automatically mutate the colors to try to provide the most readable image? (For example: the white shortcut icons being automagically reversed in Windows.)
