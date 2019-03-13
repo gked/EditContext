@@ -1,10 +1,7 @@
 # End User Defined Characters (EUDC): Explainer
 ## Introduction
 
-<figure style="float: right;">
-  <img src="eudc-edit-example.jpg" alt= />
-  <figcaption style="font-style: italic;">An example of a Chinese name utilizing EUDC to combine the characters that form their name</figcaption>
-</figure>
+  <img src="eudc-edit-example.jpg" alt="An example of a Chinese name utilizing EUDC to combine the characters that form their name" align="right" />
 
 [End User Device Characters (EUDC)](https://docs.microsoft.com/en-us/windows/desktop/Intl/end-user-defined-characters
 ) utilize the [private use area (PUA)](https://unicode-table.com/en/blocks/private-use-area/) within unicode to provide extensibility to support custom
