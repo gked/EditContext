@@ -1,10 +1,14 @@
 # End User Defined Characters (EUDC): Explainer
 ## Introduction
+
+<figure style="float: right;">
+  <img src="eudc-edit-example.jpg" alt= />
+  <figcaption style="font-style: italic;">An example of a Chinese name utilizing EUDC to combine the characters that form their name</figcaption>
+</figure>
+
 [End User Device Characters (EUDC)](https://docs.microsoft.com/en-us/windows/desktop/Intl/end-user-defined-characters
 ) utilize the [private use area (PUA)](https://unicode-table.com/en/blocks/private-use-area/) within unicode to provide extensibility to support custom
 characters. They can be defined by the end user or another party such as an equipment manufacturer, a user group, a government body, or a font design company. Their use enables users to form names and other words using characters that are not available in standard screen and printer fonts.
-
-**insert graphic of EUDCEdit with Chinese character**
 
 ## Evidence
 Microsoft has received feedback to retain support for EUDC for line-of-business and government applications and for their end users to utilize pre-defined characters.
