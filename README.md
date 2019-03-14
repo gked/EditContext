@@ -6,6 +6,7 @@ This is a private repository where the Edge team can stage explainers to review 
 
 * [ARIA Virtual Content](VirtualContent/explainer.md)
 * [EditContext](EditContext/explainer.md)
+* [EUDC](EUDC/explainer.md)
 * [FontSets](FontSets/explainer.md)
 * [Fragments](Fragments/explainer.md)
 * [ImageResource Color Scheme (part of the Web App Manifest)](ImageResource-color_scheme/explainer.md)
