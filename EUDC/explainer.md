@@ -14,6 +14,7 @@ The EUDC font is distrubted via either a TTF or TTE file ([read more here](https
 
 ## Goals
   - Enable access to the EUDC unicode codepoints on Windows
+  - PUA characters in a font file will continue to be ignored as per spec – only PUA characters registered via the windows EUDC mechanism will light up
 	
 ## Use-cases
   - When a user utilizes this character it is rendered correctly rather than U+FFFD which is usually utilized when 
