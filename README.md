@@ -10,6 +10,7 @@ This is a private repository where the Edge team can stage explainers to review 
 * [Fragments](Fragments/explainer.md)
 * [ImageResource Color Scheme (part of the Web App Manifest)](ImageResource-color_scheme/explainer.md)
 * [Native Caret Browsing](CaretBrowsing) (explainer already staged - these are the i2i and design docs)
+* [Open WebDriver Automation](OpenDriver/explainer.md)
 * [Shortcuts](Shortcuts/explainer.md)
 
 ### 🎓 Graduated Explainers (newest alumni ⬆)
