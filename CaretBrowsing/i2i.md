@@ -51,8 +51,8 @@ The feature is not exposed to the web API layer. The feature will initially be b
 No special DevTools support is required to debug this feature.
  
 ## Will this feature be supported on all six Blink platforms (Windows, Mac, Linux, Chrome OS, Android, and Android WebView)?
-Yes, with the caveat that function keys such as F7 may not be available and so alternative shortcuts might be needed. For example, the alternative shortcut for macOS could be a new combination: Command + Option + 7.
- 
+Yes, with the caveat that function keys such as F7 may not be available and so alternative shortcuts might be needed.
+
 ## Link to entry on the [feature dashboard](https://www.chromestatus.com/features)
 TBD--but not a web-facing change in Blink.
  
