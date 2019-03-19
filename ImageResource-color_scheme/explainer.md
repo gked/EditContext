@@ -24,7 +24,7 @@ For example, consider [the VS Code Insiders logo as displayed in Windows 10](#vs
 
 </figure>
 
-In the default colors of Windows 10 (and Dark Mode), the taskbar is black and the green color of the icon has a contrast ratio of 5.84:1, which is enough to meet WCAG AA for user interface components. By contrast, in Windows 10’s Light Mode, the very same logo is set against a medium grey background and only achieves a conrast ratio of 1.56:1. This is but one example. Enabling developers to indicate different image asset options for different color schemes would help avoid this issue.
+In the default colors of Windows 10 (and Dark Mode), the taskbar is black and the green color of the icon has a contrast ratio of 5.84:1, which is enough to meet WCAG AA for user interface components. By contrast, in Windows 10’s Light Mode, the very same logo is set against a medium grey background and only achieves a contrast ratio of 1.56:1. This is but one example. Enabling developers to indicate different image asset options for different color schemes would help avoid this issue.
 
 In their implementation of Windows’ Jump List feature, [the Twitter PWA implements white PNG icons](#twitter):
 
