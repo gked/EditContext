@@ -6,6 +6,7 @@ This is a private repository where the Edge team can stage explainers to review 
 
 * [ARIA Virtual Content](VirtualContent/explainer.md)
 * [EditContext](EditContext/explainer.md)
+* [EUDC](EUDC/explainer.md)
 * [FontSets](FontSets/explainer.md)
 * [Fragments](Fragments/explainer.md)
 * [Native Caret Browsing](CaretBrowsing) (explainer already staged - these are the i2i and design docs)
