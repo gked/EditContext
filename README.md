@@ -6,7 +6,6 @@ This is a private repository where the Edge team can stage explainers to review 
 
 * [ARIA Virtual Content](VirtualContent/explainer.md)
 * [EditContext](EditContext/explainer.md)
-* [EUDC](EUDC/explainer.md)
 * [FontSets](FontSets/explainer.md)
 * [Fragments](Fragments/explainer.md)
 * [Native Caret Browsing](CaretBrowsing) (explainer already staged - these are the i2i and design docs)
@@ -15,6 +14,7 @@ This is a private repository where the Edge team can stage explainers to review 
 ### 🎓 Graduated Explainers (newest alumni ⬆)
 (now in [Public Explainers Repo](https://github.com/MicrosoftEdge/MSEdgeExplainers))
 
+* [EUDC](EUDC/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/EUDC/explainer.md)) - Graduated 18 April 2019
 * [ImageResource Color Scheme (part of the Web App Manifest)](Staged/ImageResource-color_scheme/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/ImageResource-color_scheme/explainer.md)) - Graduated 21 March 2019
 * [Shortcuts](Staged/Shortcuts/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Shortcuts/explainer.md)) - Graduated 21 March 2019
 * [Native Caret Browsing Support](Staged/CaretBrowsing/explainer.md) ([public](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/CaretBrowsing/explainer.md)) - Graduated 25 February 2019
